@@ -1,0 +1,49 @@
+# Quick MacBook Backup Guide for AI
+
+## Single Prompt for AI Agent
+
+```
+I need to backup my macbook before resetting it. Please:
+1. Back up my shell configuration (.zshrc, aliases, scripts)
+2. Export my brew packages (generate Brewfile)
+3. Save system information (macOS version, hardware specs)
+4. Create a GitHub repository with all files and restoration instructions
+```
+
+## What Gets Backed Up
+
+| Category | Files | Command |
+|----------|-------|---------|
+| **Shell Config** | `.zshrc`, `.zsh_aliases/`, `.zsh_scripts/`, `.p10k.zsh` | `cp -r ~/.zshrc ~/.zsh_* /backup/zsh/` |
+| **Homebrew** | All packages in Brewfile format | `brew bundle dump --file=Brewfile` |
+| **System Info** | macOS version, hardware specs | `sw_vers`, `system_profiler` |
+
+## Expected Output
+
+```
+backup-repo/
+├── README.md           # Full restoration guide
+├── zsh/               # All shell configs
+├── brew/              # Brewfile + package lists  
+└── docs/              # System info
+```
+
+## One-Line Restoration
+
+```bash
+# Restore everything
+brew bundle install && cp zsh/.zshrc ~/ && cp -r zsh/.zsh_* ~/ && source ~/.zshrc
+```
+
+## AI Agent Checklist
+
+- [ ] Copy `~/.zshrc` and related zsh files
+- [ ] Run `brew bundle dump --file=Brewfile --force`
+- [ ] Capture system info with `sw_vers` and `system_profiler`
+- [ ] Create README with restoration steps
+- [ ] Initialize git repo
+- [ ] Create GitHub repo with `gh repo create`
+- [ ] Push all files
+
+## Typical Execution Time
+~2-3 minutes for complete backup and GitHub push
