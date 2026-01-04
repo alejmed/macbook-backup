@@ -111,7 +111,22 @@ source ~/.zshrc
    LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
    ```
 
-5. **Restore Editor Configurations**:
+5. **Install OpenCode**:
+   ```bash
+   # Download from https://opencode.ai/
+   # Open in browser and download the macOS installer
+   open https://opencode.ai/
+   ```
+
+6. **Install OhMyOpenCode** (OpenCode enhancement plugin):
+   ```bash
+   bunx oh-my-opencode install
+   # or use npx if bunx doesn't work:
+   npx oh-my-opencode install
+   ```
+   Note: Requires OpenCode >= 1.0.150. After installation, configure with `opencode auth login`.
+
+7. **Restore Editor Configurations**:
    ```bash
    # Restore LunarVim configuration
    cp editors/lvim/config.lua ~/.config/lvim/config.lua
@@ -121,7 +136,7 @@ source ~/.zshrc
    cp zsh/.p10k.zsh ~/.p10k.zsh
    ```
 
-5. **Install Third-Party Applications**:
+8. **Install Third-Party Applications**:
    ```bash
    # Homebrew apps (from Brewfile)
    brew bundle install --file=brew/Brewfile
@@ -130,7 +145,6 @@ source ~/.zshrc
    # - Chrome: https://www.google.com/chrome/
    # - Brave: https://brave.com/download/
    # - Cursor: https://cursor.sh/
-   # - OpenCode: https://opencode.ai/
    # - Spotify: https://www.spotify.com/us/download/mac/
    # - Magnet: https://magnet.crowdcafe.com/
    # - Dynamic Wallpaper: App Store

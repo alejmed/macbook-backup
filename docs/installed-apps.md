@@ -13,6 +13,7 @@
 | **Kimberly's Blog** | 1.0.0 | Custom/Local Development |
 | **Magnet** | 3.0.7 | App Store |
 | **OpenCode** | 1.0.223 | Direct Download |
+| **OhMyOpenCode** | latest | OpenCode Plugin | https://github.com/code-yeongyu/oh-my-opencode |
 | **Spotify** | 1.2.68.528 | Direct Download |
 | **Visual Studio Code** | 1.104.3 | Homebrew Cask |
 
@@ -37,6 +38,8 @@ brew install --cask android-studio
 # Development Tools
 # Cursor: https://cursor.sh/
 # OpenCode: https://opencode.ai/
+# OhMyOpenCode Plugin: https://github.com/code-yeongyu/oh-my-opencode
+# Install with: bunx oh-my-opencode install (or npx oh-my-opencode install)
 
 # Productivity
 # Spotify: https://www.spotify.com/us/download/mac/
@@ -72,6 +75,7 @@ echo "- Chrome: https://www.google.com/chrome/"
 echo "- Brave: https://brave.com/download/"
 echo "- Cursor: https://cursor.sh/"
 echo "- OpenCode: https://opencode.ai/"
+echo "- OhMyOpenCode Plugin: https://github.com/code-yeongyu/oh-my-opencode"
 echo "- Spotify: https://www.spotify.com/us/download/mac/"
 echo "- Magnet: https://magnet.crowdcafe.com/"
 echo "- Dynamic Wallpaper: https://apps.apple.com/us/app/dynamic-wallpaper/id6444603031"
