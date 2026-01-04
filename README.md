@@ -43,6 +43,7 @@ System information and version details:
 
 - `macos-version.txt` - macOS version information
 - `system-info.txt` - Hardware specifications
+- `installed-apps.md` - List of all third-party applications with versions and installation methods
 
 ## Restoration Instructions
 
@@ -99,6 +100,21 @@ source ~/.zshrc
 4. **Install LunarVim** (referenced in editor aliases):
    ```bash
    LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+   ```
+
+5. **Install Third-Party Applications**:
+   ```bash
+   # Homebrew apps (from Brewfile)
+   brew bundle install --file=brew/Brewfile
+   
+   # Manual downloads (see docs/installed-apps.md for details)
+   # - Chrome: https://www.google.com/chrome/
+   # - Brave: https://brave.com/download/
+   # - Cursor: https://cursor.sh/
+   # - OpenCode: https://opencode.ai/
+   # - Spotify: https://www.spotify.com/us/download/mac/
+   # - Magnet: https://magnet.crowdcafe.com/
+   # - Dynamic Wallpaper: App Store
    ```
 
 ## Key Aliases Reference

@@ -7,7 +7,8 @@ I need to backup my macbook before resetting it. Please:
 1. Back up my shell configuration (.zshrc, aliases, scripts)
 2. Export my brew packages (generate Brewfile)
 3. Save system information (macOS version, hardware specs)
-4. Create a GitHub repository with all files and restoration instructions
+4. List all third-party applications with versions and installation methods
+5. Create a GitHub repository with all files and restoration instructions
 ```
 
 ## What Gets Backed Up
@@ -17,6 +18,7 @@ I need to backup my macbook before resetting it. Please:
 | **Shell Config** | `.zshrc`, `.zsh_aliases/`, `.zsh_scripts/`, `.p10k.zsh` | `cp -r ~/.zshrc ~/.zsh_* /backup/zsh/` |
 | **Homebrew** | All packages in Brewfile format | `brew bundle dump --file=Brewfile` |
 | **System Info** | macOS version, hardware specs | `sw_vers`, `system_profiler` |
+| **Applications** | Third-party apps list + versions | `ls /Applications/`, `mdls` |
 
 ## Expected Output
 
@@ -24,8 +26,8 @@ I need to backup my macbook before resetting it. Please:
 backup-repo/
 ├── README.md           # Full restoration guide
 ├── zsh/               # All shell configs
-├── brew/              # Brewfile + package lists  
-└── docs/              # System info
+├── brew/              # Brewfile + package lists
+└── docs/              # System info + apps
 ```
 
 ## One-Line Restoration
@@ -40,6 +42,7 @@ brew bundle install && cp zsh/.zshrc ~/ && cp -r zsh/.zsh_* ~/ && source ~/.zshr
 - [ ] Copy `~/.zshrc` and related zsh files
 - [ ] Run `brew bundle dump --file=Brewfile --force`
 - [ ] Capture system info with `sw_vers` and `system_profiler`
+- [ ] List third-party apps with versions using `ls /Applications/` and `mdls`
 - [ ] Create README with restoration steps
 - [ ] Initialize git repo
 - [ ] Create GitHub repo with `gh repo create`

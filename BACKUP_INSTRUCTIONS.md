@@ -36,6 +36,18 @@ sw_vers > /path/to/backup/docs/macos-version.txt
 
 # Hardware info
 system_profiler SPHardwareDataType > /path/to/backup/docs/system-info.txt
+
+# Installed applications (non-default)
+ls /Applications/ | grep -v -E "(Calculator|Calendar|Camera|Clock|Contacts|Dictionary|DVD Player|FaceTime|Find My|Font Book|Freeform|GarageBand|Home|Image Capture|Keynote|Launchpad|Mail|Maps|Messages|Music|News|Notes|Numbers|Pages|Photo Booth|Photos|Podcasts|Preview|QuickTime Player|Reminders|Safari|Shortcuts|Stocks|System Settings|TextEdit|TV|Voice Memos|Weather|Utilities)" > /path/to/backup/docs/third-party-apps.txt
+
+# Get app versions
+for app in /Applications/*.app; do
+    if [[ -d "$app" ]]; then
+        name=$(basename "$app" .app)
+        version=$(mdls -name kMDItemVersion "$app" 2>/dev/null | grep "kMDItemVersion" | cut -d'"' -f4)
+        echo "$name: $version" >> /path/to/backup/docs/app-versions.txt
+    fi
+done
 ```
 
 ### 4. Create README with Restoration Instructions
@@ -70,6 +82,8 @@ gh repo create <repo-name> --public --source=. --description="MacBook backup bef
 - `~/.vimrc` or `~/.config/nvim/`
 - VS Code settings: `~/Library/Application Support/Code/User/settings.json`
 - Custom scripts from `~/.local/bin` or `~/bin`
+- List of installed third-party applications
+- Application versions and installation sources
 
 ## Directory Structure
 ```
@@ -86,7 +100,10 @@ backup-repo/
 │   └── brew-casks.txt
 └── docs/                  # System info
     ├── macos-version.txt
-    └── system-info.txt
+    ├── system-info.txt
+    ├── installed-apps.md
+    ├── third-party-apps.txt
+    └── app-versions.txt
 ```
 
 ## Quick Restoration Commands
