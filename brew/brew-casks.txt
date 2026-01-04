@@ -1,0 +1,9 @@
+android-platform-tools
+android-studio
+codex
+font-meslo-lg-nerd-font
+iterm2
+ngrok
+temurin
+temurin@21
+visual-studio-code

@@ -1,0 +1,12 @@
+# General Useful Aliases
+alias c='clear'
+alias h='history'
+alias mkd='mkdir -p'
+alias rmrf='rm -rf'
+alias dfh='df -h'
+alias duh='du -h'
+alias grep='grep --color=auto'
+alias pingg='ping google.com'
+alias top='htop'
+alias catn='cat -n'
+alias tree='tree -C'
