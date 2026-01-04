@@ -19,6 +19,18 @@ cp -r ~/.zsh_scripts /path/to/backup/zsh/ 2>/dev/null || true
 cp -r ~/.bash_aliases /path/to/backup/zsh/ 2>/dev/null || true
 ```
 
+### 1.5. Backup Editor Configurations
+```bash
+# LunarVim configuration
+cp -r ~/.config/lvim /path/to/backup/editors/ 2>/dev/null || true
+
+# Neovim configuration (if exists)
+cp -r ~/.config/nvim /path/to/backup/editors/ 2>/dev/null || true
+
+# VS Code settings (optional)
+cp -r ~/Library/Application\ Support/Code/User/settings.json /path/to/backup/editors/ 2>/dev/null || true
+```
+
 ### 2. Backup Homebrew Packages
 ```bash
 # Generate Brewfile (single file to restore everything)
@@ -80,6 +92,8 @@ gh repo create <repo-name> --public --source=. --description="MacBook backup bef
 - `~/.gitconfig`
 - `~/.ssh/config` (but NOT private keys)
 - `~/.vimrc` or `~/.config/nvim/`
+- `~/.config/lvim/` - LunarVim configuration
+- `~/.p10k.zsh` - Powerlevel10k theme configuration
 - VS Code settings: `~/Library/Application Support/Code/User/settings.json`
 - Custom scripts from `~/.local/bin` or `~/bin`
 - List of installed third-party applications
@@ -104,6 +118,11 @@ backup-repo/
     ├── installed-apps.md
     ├── third-party-apps.txt
     └── app-versions.txt
+└── editors/               # Editor configurations
+    ├── lvim/
+    │   ├── config.lua
+    │   └── lazy-lock.json
+    └── nvim/ (if exists)
 ```
 
 ## Quick Restoration Commands

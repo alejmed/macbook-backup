@@ -44,6 +44,15 @@ System information and version details:
 - `macos-version.txt` - macOS version information
 - `system-info.txt` - Hardware specifications
 - `installed-apps.md` - List of all third-party applications with versions and installation methods
+- `editor-configs.md` - LunarVim and Powerlevel10k configuration details
+
+### 4. Editor Configurations (`/editors`)
+
+Contains editor configuration files:
+
+- `lvim/` - LunarVim configuration
+  - `config.lua` - Main configuration file
+  - `lazy-lock.json` - Plugin lockfile
 
 ## Restoration Instructions
 
@@ -100,6 +109,16 @@ source ~/.zshrc
 4. **Install LunarVim** (referenced in editor aliases):
    ```bash
    LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+   ```
+
+5. **Restore Editor Configurations**:
+   ```bash
+   # Restore LunarVim configuration
+   cp editors/lvim/config.lua ~/.config/lvim/config.lua
+   cp editors/lvim/lazy-lock.json ~/.config/lvim/lazy-lock.json
+   
+   # Powerlevel10k config is already in zsh/.p10k.zsh
+   cp zsh/.p10k.zsh ~/.p10k.zsh
    ```
 
 5. **Install Third-Party Applications**:
